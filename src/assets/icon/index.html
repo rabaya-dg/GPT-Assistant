@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Outfit&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="./ic.css" />
+        <style>
+            * {
+                overscroll-behavior: transparent;
+                box-sizing: border-box !important;
+            }
+
+            *::-webkit-scrollbar {
+                display: none !important;
+            }
+            body {
+                height: 100vh;
+                width: 100vw;
+                padding: 0;
+                margin: 0;
+                font-family: "Outfit", sans-serif !important;
+            }
+            #wrapper {
+                display: grid;
+                grid-template-columns: repeat(10, 1fr);
+                grid-gap: 10px;
+                background-color: #f8f8fc !important;
+                overflow-x: hidden;
+                width: 100vw !important;
+                padding: 2rem !important;
+            }
+
+            div {
+                display: grid;
+                place-items: center;
+                font-size: 12px !important;
+                background-color: white;
+                width: auto;
+                border-radius: 5px;
+                border: 1px solid #efefef;
+                color: #181818;
+                padding: 1rem;
+                cursor: pointer;
+                transition: all 0.1s ease-in-out;
+            }
+
+            div:hover {
+                background-color: #181818;
+                color: white !important;
+            }
+
+            div i {
+                font-size: 32px;
+                margin-bottom: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <section id="wrapper"></section>
+        <script type="module" src="./icon.js"></script>
+        <script defer type="module" src="./i.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                // Create WebSocket connection.
+                const socket = new WebSocket("ws://localhost:8080");
+
+                // // Connection opened
+                // socket.addEventListener("open", (event) => {
+                //     socket.send("index.html");
+                // });
+
+                // Listen for messages
+                socket.addEventListener("message", (event) => {
+                    console.log("Message from server ", event.data);
+                });
+            });
+        </script>
+    </body>
+</html>

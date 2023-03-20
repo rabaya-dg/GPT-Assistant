@@ -1,0 +1,51 @@
+@import './colors.scss';
+
+@font-face {
+	font-family: "DM Sans";
+	src: url('../assets/fonts/DM_Sans/DMSans-Regular.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Poppins';
+	src: url('../assets/fonts/Poppins/Poppins-Regular.ttf') format('truetype');
+}
+
+
+* {
+    outline: none;
+    box-sizing: border-box;
+    user-zoom: none;
+    -webkit-tap-highlight-color: transparent;
+    font-family: "DM Sans", sans-serif;
+    -webkit-font-smoothing: subpixel-antialiased;
+    transition: 
+		background 0.25s ease-in-out,
+		color 0.25s ease-in-out,
+        border 0.25s ease-in-out !important;
+
+    &:hover,
+    &:focus,
+    &:active {
+        outline: none !important;
+    }
+
+    &::-webkit-scrollbar {
+        width: 0;
+        display: none;
+    }
+}
+
+html,
+body {
+    scroll-behavior: smooth !important;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: var(--background);
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
